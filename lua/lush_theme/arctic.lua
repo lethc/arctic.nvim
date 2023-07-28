@@ -152,7 +152,7 @@ local theme = lush(function(injected_functions)
     --
     -- Syntax
     --
-    Comment { fg = green, gui = 'italic' },
+    Comment { fg = green, gui = 'italic, bold' },
 
     Constant { fg = blue },
     String { fg = orange },
@@ -161,15 +161,15 @@ local theme = lush(function(injected_functions)
     Boolean { Constant },
     Float { Number },
 
-    Identifier { fg = light_blue },
-    Function { fg = yellow },
+    Identifier { fg = light_blue  },
+    Function { fg = yellow, gui = 'bold, italic' },
 
     Statement { fg = pink },
     Conditional { Statement },
     Repeat { Statement },
     Label { Statement },
     Operator { fg = norm_fg },
-    Keyword { fg = blue },
+    Keyword { fg = blue, gui = 'bold, italic' },
     Exception { Statement },
 
     PreProc { fg = pink },
@@ -178,7 +178,7 @@ local theme = lush(function(injected_functions)
     Macro { PreProc },
     PreCondit { PreProc },
 
-    Type { fg = blue },
+    Type { fg = blue, gui = 'bold' },
     StorageClass { Type },
     Structure { Type },
     Typedef { Type },
@@ -284,9 +284,9 @@ local theme = lush(function(injected_functions)
     -- Keyword
     sym("@keyword") { Keyword },
     sym("@keyword.coroutine") { fg = pink },
-    sym("@keyword.function") { fg = blue },
+    sym("@keyword.function") { fg = blue, gui = 'bold, italic' },
     sym("@keyword.operator") { fg = norm_fg },
-    sym("@keyword.return") { fg = pink },
+    sym("@keyword.return") { fg = pink, gui = 'bold, italic' },
     -- sym("@conditional") { },
     -- sym("@conditional.ternary") { },
     -- sym("@repeat") { },
@@ -308,7 +308,7 @@ local theme = lush(function(injected_functions)
     -- Identifiers
     sym("@variable") { fg = light_blue },
     sym("@variable.builtin") { fg = blue },
-    -- sym("@constant") { },
+    sym("@constant") { fg = light_blue, gui = 'bold, italic' },
     sym("@constant.builtin") { Constant },
     sym("@constant.macro") { Constant },
     sym("@namespace") { fg = blue_green },
@@ -368,7 +368,7 @@ local theme = lush(function(injected_functions)
     sym("@lsp.type.function") { fg = yellow },
     sym("@lsp.type.method") { fg = yellow },
     sym("@lsp.type.macro") { fg = blue },
-    sym("@lsp.type.keyword") { fg = blue },
+    -- sym("@lsp.type.keyword") { fg = blue },
     sym("@lsp.type.modifier") { fg = blue },
     sym("@lsp.type.comment") { fg = green },
     sym("@lsp.type.string") { fg = orange },
@@ -602,3 +602,4 @@ end)
 ---@diagnostic enable
 
 return theme
+
